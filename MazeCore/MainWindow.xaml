@@ -4,8 +4,6 @@
         Title="MazeCore - Генератор лабіринтів" Height="600" Width="800"
         MinHeight="500" MinWidth="700">
     <Grid>
-        <TextBlock Text="Вітаємо у MazeCore!" HorizontalAlignment="Center" Margin="0,50,0,0" FontSize="24"/>
-        <TextBox x:Name="TestInput" Width="200" Height="30" Margin="0,120,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="TestButton" Content="Тестова кнопка" Width="150" Height="40" Click="TestButton_Click"/>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

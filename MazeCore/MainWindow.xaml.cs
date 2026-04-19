@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using MazeCore.Views; // Підключаємо твою папку Views
 
 namespace MazeCore
 {
@@ -7,11 +8,8 @@ namespace MazeCore
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void TestButton_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show($"Ви ввели: {TestInput.Text}", "Тест UI");
+            // Завантажуємо головне меню при старті
+            MainFrame.Navigate(new MainMenuPage());
         }
     }
 }
