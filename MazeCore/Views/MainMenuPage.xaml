@@ -12,10 +12,10 @@
                    HorizontalAlignment="Center" Margin="0,40,0,20" Foreground="#2F3640"/>
 
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250">
-            <Button Content="Генерувати лабіринт" Height="45" Margin="0,0,0,15" />
-            <Button Content="Редактор (Admin)" Height="45" Margin="0,0,0,15"/>
-            <Button Content="Статистика" Height="45" Margin="0,0,0,15"/>
-            <Button Content="Вихід" Height="45" />
+            <Button Content="Генерувати лабіринт" Style="{StaticResource PrimaryButtonStyle}" Height="45" Margin="0,0,0,15" />
+            <Button Content="Редактор (Admin)" Style="{StaticResource PrimaryButtonStyle}" Height="45" Margin="0,0,0,15"/>
+            <Button Content="Статистика" Style="{StaticResource PrimaryButtonStyle}" Height="45" Margin="0,0,0,15"/>
+            <Button Content="Вихід" Style="{StaticResource PrimaryButtonStyle}" Height="45" />
         </StackPanel>
     </Grid>
 </Page>
