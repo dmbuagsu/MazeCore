@@ -1,28 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using MazeCore.Services;
 
 namespace MazeCore.Views
 {
-    /// <summary>
-    /// Interaction logic for LoginPage.xaml
-    /// </summary>
     public partial class LoginPage : Page
     {
+        private readonly AuthService _authService;
+
         public LoginPage()
         {
             InitializeComponent();
+            _authService = new AuthService();
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            string login = LoginTextBox.Text.Trim();
+            string password = LoginPasswordBox.Password; // Використовуємо нове ім'я!
+
+            if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
+            {
+                ShowError("Будь ласка, заповніть усі поля.");
+                return;
+            }
+
+            if (_authService.Login(login, password))
+            {
+                NavigationService?.Navigate(new MainMenuPage());
+            }
+            else
+            {
+                ShowError("Невірний логін або пароль!");
+            }
+        }
+
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.Navigate(new RegisterPage());
+        }
+
+        private void ShowError(string message)
+        {
+            ErrorTextBlock.Text = message;
+            ErrorTextBlock.Visibility = Visibility.Visible;
         }
     }
 }
