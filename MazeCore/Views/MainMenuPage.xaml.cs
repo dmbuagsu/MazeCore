@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using MazeCore.Services;
@@ -46,8 +46,14 @@ namespace MazeCore.Views
             NavigationService?.Navigate(new StatisticsPage());
         }
 
+        private void GoToSettings_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.Navigate(new SettingsPage());
+        }
+
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
+            LogService.Log("Logout", "Користувач вийшов з системи");
             // Виходимо з акаунту
             AuthService authService = new AuthService();
             authService.Logout();

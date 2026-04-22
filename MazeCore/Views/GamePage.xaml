@@ -1,14 +1,52 @@
-﻿<Page x:Class="MazeCore.Views.GamePage"
+<Page x:Class="MazeCore.Views.GamePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:MazeCore.Views"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="GamePage">
+      Title="{DynamicResource GameTitle}">
 
-    <Grid>
-        
+    <Grid Background="{DynamicResource AppBackground}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Ліва панель керування -->
+        <Border Grid.Column="0" Style="{StaticResource CardStyle}" Margin="15">
+            <StackPanel>
+                <TextBlock Text="{DynamicResource GameTitle}" FontSize="24" FontWeight="Bold" 
+                           Foreground="{DynamicResource AppForeground}" Margin="0,0,0,20"/>
+
+                <TextBlock Text="{DynamicResource SelectMazeLabel}" Foreground="{DynamicResource SubtleText}" Margin="0,0,0,5"/>
+                <ComboBox x:Name="MazeComboBox" Height="38" Margin="0,0,0,15" Style="{StaticResource ThemedComboBoxStyle}"
+                          DisplayMemberPath="Name" SelectionChanged="MazeComboBox_SelectionChanged"/>
+
+                <Button Content="{DynamicResource BtnQuickGame}" Style="{StaticResource PrimaryButtonStyle}" 
+                        Height="40" Margin="0,0,0,20" Click="QuickGameButton_Click"/>
+
+                <Separator Margin="0,0,0,20" Background="{DynamicResource BorderColor}"/>
+
+                <TextBlock Text="{DynamicResource ComplexityLabel}" Foreground="{DynamicResource SubtleText}"/>
+                <TextBlock x:Name="ComplexityTextBlock" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource AppForeground}" Margin="0,0,0,15"/>
+
+                <TextBlock Text="{DynamicResource PathLengthLabel}" Foreground="{DynamicResource SubtleText}"/>
+                <TextBlock x:Name="PathLengthTextBlock" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource AppForeground}" Margin="0,0,0,20"/>
+
+                <Button x:Name="SolveButton" Content="{DynamicResource BtnSolveBFS}" Style="{StaticResource PrimaryButtonStyle}" 
+                        Background="{DynamicResource SuccessColor}" Height="45" Margin="0,0,0,10" Click="SolveButton_Click" IsEnabled="False"/>
+                        
+                <Button x:Name="ClearButton" Content="{DynamicResource BtnClearPath}" Style="{StaticResource DangerButtonStyle}" 
+                        Height="40" Margin="0,0,0,25" Click="ClearButton_Click" IsEnabled="False"/>
+
+                <Button Content="{DynamicResource BtnBackMenu}" Style="{StaticResource LinkButtonStyle}" 
+                        Height="30" Click="BackButton_Click"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Права панель з лабіринтом -->
+        <Border Grid.Column="1" Style="{StaticResource CardStyle}" Margin="0,15,15,15">
+            <!-- Viewbox автоматично масштабує Canvas під розмір вікна -->
+            <Viewbox>
+                <Canvas x:Name="MazeCanvas" Width="400" Height="400" Background="White"/>
+            </Viewbox>
+        </Border>
     </Grid>
 </Page>

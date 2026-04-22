@@ -1,0 +1,18 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Кольори для світлої теми -->
+    <SolidColorBrush x:Key="AppBackground" Color="#F0F2F5"/>
+    <SolidColorBrush x:Key="AppForeground" Color="#2F3640"/>
+    <SolidColorBrush x:Key="CardBackground" Color="White"/>
+    <SolidColorBrush x:Key="SubtleText" Color="#666666"/>
+    <SolidColorBrush x:Key="BorderColor" Color="#CCCCCC"/>
+    <SolidColorBrush x:Key="InputBackground" Color="White"/>
+    <SolidColorBrush x:Key="InputForeground" Color="#2F3640"/>
+    <SolidColorBrush x:Key="DataGridRow" Color="White"/>
+    <SolidColorBrush x:Key="DataGridAltRow" Color="#F7F9FC"/>
+    <SolidColorBrush x:Key="DataGridHeader" Color="#F0F2F5"/>
+    <SolidColorBrush x:Key="DataGridHeaderFg" Color="#2F3640"/>
+    <SolidColorBrush x:Key="ShadowColor" Color="#20000000"/>
+
+</ResourceDictionary>

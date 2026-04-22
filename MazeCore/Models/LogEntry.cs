@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace MazeCore.Models
 {
-    class LogEntry
+    // Запис у журналі подій програми
+    public class LogEntry
     {
+        public string EventType { get; set; }   // "Login", "Logout", "Generate", "Error" тощо
+        public string Message { get; set; }
+        public string UserLogin { get; set; }
+        public DateTime Timestamp { get; set; } = DateTime.Now;
     }
 }

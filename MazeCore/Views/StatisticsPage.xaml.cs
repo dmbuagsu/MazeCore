@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
@@ -97,6 +97,66 @@ namespace MazeCore.Views
         private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
             LoadData();
+        }
+
+        // --- CRUD UPDATE ---
+        private void RenameButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MazesDataGrid.SelectedItem is Maze selectedMaze)
+            {
+                // Демонстрація операції Update. Замість повноцінного діалогового вікна введення,
+                // ми просто додаємо маркер "Ред." до назви, щоб показати як оновлювати запис у файлі.
+                List<Maze> allMazes = JsonProvider.LoadFromFile<Maze>(MazesFileName);
+                var mazeToUpdate = allMazes.FirstOrDefault(m => m.Id == selectedMaze.Id);
+                
+                if (mazeToUpdate != null)
+                {
+                    mazeToUpdate.Name = mazeToUpdate.Name + " (Ред.)";
+                    JsonProvider.SaveToFile(MazesFileName, allMazes);
+                    
+                    // Оновлюємо UI
+                    selectedMaze.Name = mazeToUpdate.Name;
+                    MazesDataGrid.Items.Refresh(); // Примусове оновлення гріда
+                    
+                    Services.LogService.Log("Update", $"Лабіринт {selectedMaze.Name} перейменовано");
+                    MessageBox.Show("Запис оновлено (додано маркер 'Ред.')", "Update", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Будь ласка, виберіть лабіринт зі списку.", "Увага", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        // --- CRUD DELETE ---
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MazesDataGrid.SelectedItem is Maze selectedMaze)
+            {
+                var result = MessageBox.Show($"Ви дійсно хочете видалити лабіринт '{selectedMaze.Name}'?", 
+                                             "Підтвердження", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                
+                if (result == MessageBoxResult.Yes)
+                {
+                    List<Maze> allMazes = JsonProvider.LoadFromFile<Maze>(MazesFileName);
+                    var mazeToRemove = allMazes.FirstOrDefault(m => m.Id == selectedMaze.Id);
+                    
+                    if (mazeToRemove != null)
+                    {
+                        allMazes.Remove(mazeToRemove);
+                        JsonProvider.SaveToFile(MazesFileName, allMazes); // Зберігаємо у файл
+                        
+                        _mazesCollection.Remove(selectedMaze); // Видаляємо з колекції (оновлює UI)
+                        
+                        Services.LogService.Log("Delete", $"Лабіринт {selectedMaze.Name} видалено");
+                        MessageBox.Show("Запис успішно видалено.", "Delete", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Будь ласка, виберіть лабіринт зі списку.", "Увага", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         // Повернення в меню

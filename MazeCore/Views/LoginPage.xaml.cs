@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using MazeCore.Services;
@@ -28,10 +28,12 @@ namespace MazeCore.Views
 
             if (_authService.Login(login, password))
             {
+                LogService.Log("Login", $"Користувач {login} успішно увійшов у систему");
                 NavigationService?.Navigate(new MainMenuPage());
             }
             else
             {
+                LogService.Log("LoginFailed", $"Невдала спроба входу для: {login}");
                 ShowError("Невірний логін або пароль!");
             }
         }

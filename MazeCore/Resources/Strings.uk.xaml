@@ -1,0 +1,74 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Загальні -->
+    <sys:String x:Key="AppTitle">MazeCore</sys:String>
+
+    <!-- WelcomePage -->
+    <sys:String x:Key="WelcomeSubtitle">Генератор та вирішувач лабіринтів</sys:String>
+    <sys:String x:Key="BtnLogin">УВІЙТИ В СИСТЕМУ</sys:String>
+    <sys:String x:Key="BtnCreateAccount">СТВОРИТИ АКАУНТ</sys:String>
+
+    <!-- LoginPage -->
+    <sys:String x:Key="LoginTitle">Авторизація</sys:String>
+    <sys:String x:Key="LoginLabel">Логін:</sys:String>
+    <sys:String x:Key="PasswordLabel">Пароль:</sys:String>
+    <sys:String x:Key="BtnSignIn">УВІЙТИ</sys:String>
+    <sys:String x:Key="BtnGoToRegister">Ще немає акаунту? Зареєструватись</sys:String>
+
+    <!-- RegisterPage -->
+    <sys:String x:Key="RegisterTitle">Реєстрація</sys:String>
+    <sys:String x:Key="FullNameLabel">Повне ім'я:</sys:String>
+    <sys:String x:Key="LoginInputLabel">Логін:</sys:String>
+    <sys:String x:Key="PasswordInputLabel">Пароль (мін. 4 символи):</sys:String>
+    <sys:String x:Key="ConfirmPasswordLabel">Підтвердження пароля:</sys:String>
+    <sys:String x:Key="BtnSignUp">ЗАРЕЄСТРУВАТИСЯ</sys:String>
+    <sys:String x:Key="BtnBackToLogin">Повернутися до входу</sys:String>
+
+    <!-- MainMenuPage -->
+    <sys:String x:Key="MainMenuTitle">Головне меню</sys:String>
+    <sys:String x:Key="BtnPlay">Грати (Вирішувач)</sys:String>
+    <sys:String x:Key="BtnEditor">Редактор (Admin)</sys:String>
+    <sys:String x:Key="BtnStats">Статистика</sys:String>
+    <sys:String x:Key="BtnSettings">Налаштування</sys:String>
+    <sys:String x:Key="BtnLogout">Вихід</sys:String>
+
+    <!-- GamePage -->
+    <sys:String x:Key="GameTitle">Вирішення лабіринту</sys:String>
+    <sys:String x:Key="SelectMazeLabel">Вибрати лабіринт:</sys:String>
+    <sys:String x:Key="BtnQuickGame">Швидка гра (новий)</sys:String>
+    <sys:String x:Key="BtnSolveBFS">Вирішити (BFS)</sys:String>
+    <sys:String x:Key="BtnClearPath">Очистити шлях</sys:String>
+    <sys:String x:Key="TimerLabel">Час:</sys:String>
+    <sys:String x:Key="PathLengthLabel">Довжина шляху:</sys:String>
+    <sys:String x:Key="ComplexityLabel">Складність:</sys:String>
+    <sys:String x:Key="BtnBackMenu">Назад в меню</sys:String>
+
+    <!-- StatisticsPage -->
+    <sys:String x:Key="StatsTitle">База лабіринтів</sys:String>
+    <sys:String x:Key="BtnSearch">Пошук</sys:String>
+    <sys:String x:Key="BtnSort">Сортувати</sys:String>
+    <sys:String x:Key="BtnRefresh">Оновити</sys:String>
+    <sys:String x:Key="BtnDeleteMaze">Видалити</sys:String>
+    <sys:String x:Key="BtnRenameMaze">Перейменувати</sys:String>
+    <sys:String x:Key="BtnBack">Назад</sys:String>
+
+    <!-- MazeEditorPage -->
+    <sys:String x:Key="EditorTitle">Редактор лабіринтів</sys:String>
+    <sys:String x:Key="ParamsLabel">Параметри</sys:String>
+    <sys:String x:Key="MazeNameLabel">Назва лабіринту:</sys:String>
+    <sys:String x:Key="WidthLabel">Ширина (клітинок):</sys:String>
+    <sys:String x:Key="HeightLabel">Висота (клітинок):</sys:String>
+    <sys:String x:Key="BtnGenerate">ЗГЕНЕРУВАТИ</sys:String>
+    <sys:String x:Key="BtnSaveMaze">ЗБЕРЕГТИ В БАЗУ</sys:String>
+
+    <!-- SettingsPage -->
+    <sys:String x:Key="SettingsTitle">Налаштування</sys:String>
+    <sys:String x:Key="ThemeLabel">Тема оформлення:</sys:String>
+    <sys:String x:Key="LightThemeOption">Світла</sys:String>
+    <sys:String x:Key="DarkThemeOption">Темна</sys:String>
+    <sys:String x:Key="LanguageLabel">Мова інтерфейсу:</sys:String>
+    <sys:String x:Key="BtnSaveSettings">Зберегти налаштування</sys:String>
+
+</ResourceDictionary>

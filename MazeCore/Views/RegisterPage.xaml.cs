@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 using System.Windows.Controls;
 using MazeCore.Services;
 using MazeCore.Models;
@@ -49,6 +49,7 @@ namespace MazeCore.Views
 
             if (isRegistered)
             {
+                LogService.Log("Register", $"Новий користувач {login} успішно зареєстрований");
                 MessageBox.Show("Реєстрація пройшла успішно! Тепер ви можете увійти.",
                                 "Успіх", MessageBoxButton.OK, MessageBoxImage.Information);
                 // Повертаємось на сторінку входу
@@ -56,6 +57,7 @@ namespace MazeCore.Views
             }
             else
             {
+                LogService.Log("RegisterFailed", $"Спроба реєстрації з існуючим логіном: {login}");
                 ShowError("Користувач з таким логіном вже існує!");
             }
         }

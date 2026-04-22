@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace MazeCore.Models
 {
-    class SolveRecord
+    // Запис про пройдений лабіринт
+    public class SolveRecord
     {
+        public string Id { get; set; } = Guid.NewGuid().ToString();
+        public string MazeName { get; set; }
+        public string PlayerLogin { get; set; }
+        public int SolveTimeSeconds { get; set; }
+        public int PathLength { get; set; }
+        public string Algorithm { get; set; } // "BFS" або "Ручний"
+        public DateTime SolvedAt { get; set; }
     }
 }

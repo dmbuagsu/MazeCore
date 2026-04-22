@@ -1,29 +1,31 @@
-﻿<Page x:Class="MazeCore.Views.MainMenuPage"
+<Page x:Class="MazeCore.Views.MainMenuPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      Title="Головне меню">
+      Title="{DynamicResource MainMenuTitle}">
 
-    <Grid Background="#F5F6FA">
+    <Grid Background="{DynamicResource AppBackground}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Margin="0,40,0,20">
-            <TextBlock Text="MazeCore" FontSize="36" FontWeight="Bold" 
-                       HorizontalAlignment="Center" Foreground="#2F3640"/>
-            <TextBlock x:Name="WelcomeTextBlock" FontSize="18" FontWeight="SemiBold"
-                       HorizontalAlignment="Center" Foreground="#0078D7" Margin="0,10,0,0"/>
+            <TextBlock Text="{DynamicResource AppTitle}" FontSize="42" FontWeight="Bold" 
+                       HorizontalAlignment="Center" Foreground="{DynamicResource AppForeground}"/>
+            <TextBlock x:Name="WelcomeTextBlock" FontSize="20" FontWeight="SemiBold"
+                       HorizontalAlignment="Center" Foreground="{DynamicResource AccentColor}" Margin="0,10,0,0"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250">
-            <Button Content="Грати (Генератор)" Style="{StaticResource PrimaryButtonStyle}" Height="45" Margin="0,0,0,15" Click="GoToGame_Click" />
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="280">
+            <Button Content="{DynamicResource BtnPlay}" Style="{StaticResource PrimaryButtonStyle}" Height="45" Margin="0,0,0,15" Click="GoToGame_Click" />
 
-            <Button x:Name="AdminEditorButton" Content="Редактор (Admin)" Style="{StaticResource PrimaryButtonStyle}" Height="45" Margin="0,0,0,15" Click="GoToEditor_Click"/>
+            <Button x:Name="AdminEditorButton" Content="{DynamicResource BtnEditor}" Style="{StaticResource PrimaryButtonStyle}" Height="45" Margin="0,0,0,15" Click="GoToEditor_Click"/>
 
-            <Button Content="Статистика" Style="{StaticResource PrimaryButtonStyle}" Height="45" Margin="0,0,0,15" Click="GoToStats_Click"/>
+            <Button Content="{DynamicResource BtnStats}" Style="{StaticResource PrimaryButtonStyle}" Height="45" Margin="0,0,0,15" Click="GoToStats_Click"/>
 
-            <Button Content="Вихід" Style="{StaticResource PrimaryButtonStyle}" Background="#E74C3C" Height="45" Click="LogoutButton_Click"/>
+            <Button Content="{DynamicResource BtnSettings}" Style="{StaticResource PrimaryButtonStyle}" Height="45" Margin="0,0,0,30" Click="GoToSettings_Click"/>
+
+            <Button Content="{DynamicResource BtnLogout}" Style="{StaticResource DangerButtonStyle}" Height="45" Click="LogoutButton_Click"/>
         </StackPanel>
     </Grid>
 </Page>

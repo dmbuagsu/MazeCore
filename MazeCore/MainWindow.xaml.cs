@@ -1,5 +1,5 @@
-﻿using System.Windows;
-using MazeCore.Views; // Підключаємо твою папку Views
+using System.Windows;
+using MazeCore.Views;
 
 namespace MazeCore
 {
@@ -8,8 +8,8 @@ namespace MazeCore
         public MainWindow()
         {
             InitializeComponent();
-            // Завантажуємо головне меню при старті
-            MainFrame.Navigate(new MainMenuPage());
+            // Завантажуємо вітальну сторінку при старті замість головного меню
+            MainFrame.Navigate(new WelcomePage());
         }
     }
 }
