@@ -1,0 +1,18 @@
+[
+  {
+    "Id": 1,
+    "Login": "admin",
+    "PasswordHash": "$2a$11$zWc7b9CX6AZJwh2wi5bLFepAdqCTXjw4Oz0OjJjHA9zi3y25nvlKW",
+    "FullName": "\u0413\u043E\u043B\u043E\u0432\u043D\u0438\u0439 \u0410\u0434\u043C\u0456\u043D\u0456\u0441\u0442\u0440\u0430\u0442\u043E\u0440",
+    "Role": 0,
+    "CreatedAt": "2026-04-22T18:33:11.7796247+03:00"
+  },
+  {
+    "Id": 2,
+    "Login": "111111",
+    "PasswordHash": "$2a$11$nZsy4u2Xzgr3q0hsorPR8u472kTYNLFvr0C62/1fZEnw4KaBDfQc.",
+    "FullName": "111111",
+    "Role": 1,
+    "CreatedAt": "2026-04-22T18:33:29.7893903+03:00"
+  }
+]

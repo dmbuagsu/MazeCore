@@ -2,25 +2,27 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!-- Акцентні кольори (однакові для обох тем) -->
-    <SolidColorBrush x:Key="AccentColor" Color="#00A8FF"/>
-    <SolidColorBrush x:Key="AccentHover" Color="#0090E0"/>
-    <SolidColorBrush x:Key="DangerColor" Color="#E74C3C"/>
-    <SolidColorBrush x:Key="DangerHover" Color="#C0392B"/>
+    <SolidColorBrush x:Key="AccentColor"  Color="#00A8FF"/>
+    <SolidColorBrush x:Key="AccentHover"  Color="#0090E0"/>
+    <SolidColorBrush x:Key="DangerColor"  Color="#E74C3C"/>
+    <SolidColorBrush x:Key="DangerHover"  Color="#C0392B"/>
     <SolidColorBrush x:Key="SuccessColor" Color="#27AE60"/>
+    <SolidColorBrush x:Key="SuccessHover" Color="#1E8449"/>
+    <SolidColorBrush x:Key="WarnColor"    Color="#F39C12"/>
 
     <!-- Основна кнопка (синя) з ефектом наведення -->
     <Style x:Key="PrimaryButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="{StaticResource AccentColor}"/>
-        <Setter Property="Foreground" Value="White"/>
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Background"   Value="{StaticResource AccentColor}"/>
+        <Setter Property="Foreground"   Value="White"/>
+        <Setter Property="FontSize"     Value="14"/>
+        <Setter Property="FontWeight"   Value="SemiBold"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Cursor"       Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border x:Name="Bd" Background="{TemplateBinding Background}" CornerRadius="8"
-                            Padding="12,8">
+                    <Border x:Name="Bd" Background="{TemplateBinding Background}"
+                            CornerRadius="8" Padding="12,8">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -38,17 +40,17 @@
 
     <!-- Небезпечна кнопка (червона) -->
     <Style x:Key="DangerButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="{StaticResource DangerColor}"/>
-        <Setter Property="Foreground" Value="White"/>
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Background"   Value="{StaticResource DangerColor}"/>
+        <Setter Property="Foreground"   Value="White"/>
+        <Setter Property="FontSize"     Value="14"/>
+        <Setter Property="FontWeight"   Value="SemiBold"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Cursor"       Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border x:Name="Bd" Background="{TemplateBinding Background}" CornerRadius="8"
-                            Padding="12,8">
+                    <Border x:Name="Bd" Background="{TemplateBinding Background}"
+                            CornerRadius="8" Padding="12,8">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -64,17 +66,46 @@
         </Setter>
     </Style>
 
-    <!-- Кнопка-посилання (прозора) -->
-    <Style x:Key="LinkButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="{StaticResource AccentColor}"/>
-        <Setter Property="FontSize" Value="13"/>
+    <!-- Сіра (вторинна) кнопка -->
+    <Style x:Key="SecondaryButtonStyle" TargetType="Button">
+        <Setter Property="Background"   Value="{DynamicResource BorderColor}"/>
+        <Setter Property="Foreground"   Value="{DynamicResource AppForeground}"/>
+        <Setter Property="FontSize"     Value="14"/>
+        <Setter Property="FontWeight"   Value="Normal"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Cursor"       Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <TextBlock x:Name="Tb" Text="{TemplateBinding Content}"
+                    <Border x:Name="Bd" Background="{TemplateBinding Background}"
+                            CornerRadius="8" Padding="12,8">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="Opacity" Value="0.8"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Bd" Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Кнопка-посилання (прозора) -->
+    <Style x:Key="LinkButtonStyle" TargetType="Button">
+        <Setter Property="Background"   Value="Transparent"/>
+        <Setter Property="Foreground"   Value="{StaticResource AccentColor}"/>
+        <Setter Property="FontSize"     Value="13"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor"       Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <TextBlock x:Name="Tb"
+                               Text="{TemplateBinding Content}"
                                Foreground="{TemplateBinding Foreground}"
                                FontSize="{TemplateBinding FontSize}"
                                HorizontalAlignment="Center"/>
@@ -88,24 +119,28 @@
         </Setter>
     </Style>
 
-    <!-- TextBox з підтримкою теми -->
+    <!-- TextBox з підтримкою теми (висота відповідає тексту, без обрізання) -->
     <Style x:Key="ThemedTextBoxStyle" TargetType="TextBox">
-        <Setter Property="Background" Value="{DynamicResource InputBackground}"/>
-        <Setter Property="Foreground" Value="{DynamicResource InputForeground}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource BorderColor}"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Padding" Value="8,6"/>
-        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Background"             Value="{DynamicResource InputBackground}"/>
+        <Setter Property="Foreground"             Value="{DynamicResource InputForeground}"/>
+        <Setter Property="CaretBrush"             Value="{DynamicResource InputForeground}"/>
+        <Setter Property="BorderBrush"            Value="{DynamicResource BorderColor}"/>
+        <Setter Property="BorderThickness"        Value="1"/>
+        <Setter Property="FontSize"               Value="14"/>
+        <Setter Property="Padding"                Value="10,0"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
-                    <Border x:Name="Bd" Background="{TemplateBinding Background}"
+                    <Border x:Name="Bd"
+                            Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="6">
-                        <ScrollViewer x:Name="PART_ContentHost" Margin="{TemplateBinding Padding}"
-                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            CornerRadius="6"
+                            Padding="{TemplateBinding Padding}">
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                      Focusable="False"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
@@ -119,22 +154,25 @@
 
     <!-- PasswordBox з підтримкою теми -->
     <Style x:Key="ThemedPasswordBoxStyle" TargetType="PasswordBox">
-        <Setter Property="Background" Value="{DynamicResource InputBackground}"/>
-        <Setter Property="Foreground" Value="{DynamicResource InputForeground}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource BorderColor}"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Padding" Value="8,6"/>
-        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Background"             Value="{DynamicResource InputBackground}"/>
+        <Setter Property="Foreground"             Value="{DynamicResource InputForeground}"/>
+        <Setter Property="BorderBrush"            Value="{DynamicResource BorderColor}"/>
+        <Setter Property="BorderThickness"        Value="1"/>
+        <Setter Property="FontSize"               Value="14"/>
+        <Setter Property="Padding"                Value="10,0"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="PasswordBox">
-                    <Border x:Name="Bd" Background="{TemplateBinding Background}"
+                    <Border x:Name="Bd"
+                            Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="6">
-                        <ScrollViewer x:Name="PART_ContentHost" Margin="{TemplateBinding Padding}"
-                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            CornerRadius="6"
+                            Padding="{TemplateBinding Padding}">
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                      Focusable="False"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
@@ -148,9 +186,9 @@
 
     <!-- Стиль карточки (Border з тінню) -->
     <Style x:Key="CardStyle" TargetType="Border">
-        <Setter Property="Background" Value="{DynamicResource CardBackground}"/>
-        <Setter Property="CornerRadius" Value="10"/>
-        <Setter Property="Padding" Value="20"/>
+        <Setter Property="Background"    Value="{DynamicResource CardBackground}"/>
+        <Setter Property="CornerRadius"  Value="10"/>
+        <Setter Property="Padding"       Value="20"/>
         <Setter Property="Effect">
             <Setter.Value>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.15" Color="#000000"/>
@@ -160,12 +198,141 @@
 
     <!-- ComboBox з підтримкою теми -->
     <Style x:Key="ThemedComboBoxStyle" TargetType="ComboBox">
+        <Setter Property="Background"      Value="{DynamicResource InputBackground}"/>
+        <Setter Property="Foreground"      Value="{DynamicResource InputForeground}"/>
+        <Setter Property="BorderBrush"     Value="{DynamicResource BorderColor}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding"         Value="8,6"/>
+        <Setter Property="FontSize"        Value="13"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid>
+                        <ToggleButton x:Name="ToggleButton"
+                                      Background="{TemplateBinding Background}"
+                                      BorderBrush="{TemplateBinding BorderBrush}"
+                                      BorderThickness="{TemplateBinding BorderThickness}"
+                                      Foreground="{TemplateBinding Foreground}"
+                                      Padding="{TemplateBinding Padding}"
+                                      IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                      Focusable="False">
+                            <ToggleButton.Template>
+                                <ControlTemplate TargetType="ToggleButton">
+                                    <Border x:Name="Bd"
+                                            Background="{TemplateBinding Background}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="6">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="24"/>
+                                            </Grid.ColumnDefinitions>
+                                            <ContentPresenter Grid.Column="0"
+                                                              Margin="{TemplateBinding Padding}"
+                                                              VerticalAlignment="Center"/>
+                                            <TextBlock Grid.Column="1" Text="▾"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Center"
+                                                       Foreground="{TemplateBinding Foreground}"
+                                                       FontSize="10"/>
+                                        </Grid>
+                                    </Border>
+                                </ControlTemplate>
+                            </ToggleButton.Template>
+                        </ToggleButton>
+                        <ContentPresenter x:Name="ContentSite"
+                                          IsHitTestVisible="False"
+                                          Margin="10,0,28,0"
+                                          VerticalAlignment="Center"
+                                          Content="{TemplateBinding SelectionBoxItem}"
+                                          ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"/>
+                        <Popup x:Name="PART_Popup"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               Placement="Bottom"
+                               AllowsTransparency="True"
+                               Focusable="False"
+                               PopupAnimation="Slide">
+                            <Border Background="{DynamicResource InputBackground}"
+                                    BorderBrush="{DynamicResource BorderColor}"
+                                    BorderThickness="1"
+                                    CornerRadius="6"
+                                    MinWidth="{TemplateBinding ActualWidth}"
+                                    MaxHeight="200"
+                                    Padding="0,4">
+                                <ScrollViewer>
+                                    <ItemsPresenter/>
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="BorderBrush" Value="{StaticResource AccentColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Стиль для елементів списку ComboBox -->
+    <Style TargetType="ComboBoxItem">
         <Setter Property="Background" Value="{DynamicResource InputBackground}"/>
         <Setter Property="Foreground" Value="{DynamicResource InputForeground}"/>
+        <Setter Property="Padding" Value="8,4"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource AccentColor}"/>
+                <Setter Property="Foreground" Value="White"/>
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{StaticResource AccentHover}"/>
+                <Setter Property="Foreground" Value="White"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Стиль заголовків DataGrid -->
+    <Style TargetType="DataGridColumnHeader">
+        <Setter Property="Background" Value="{DynamicResource DataGridHeader}"/>
+        <Setter Property="Foreground" Value="{DynamicResource DataGridHeaderFg}"/>
+        <Setter Property="Padding" Value="10,8"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="BorderThickness" Value="0,0,1,1"/>
         <Setter Property="BorderBrush" Value="{DynamicResource BorderColor}"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Padding" Value="8,6"/>
-        <Setter Property="FontSize" Value="13"/>
+    </Style>
+
+    <!-- Кнопка бічного меню (навігаційна) -->
+    <Style x:Key="MenuNavButtonStyle" TargetType="Button">
+        <Setter Property="Background"      Value="Transparent"/>
+        <Setter Property="Foreground"      Value="{DynamicResource AppForeground}"/>
+        <Setter Property="FontSize"        Value="14"/>
+        <Setter Property="FontWeight"      Value="Normal"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor"          Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Height"          Value="44"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Bd" Background="{TemplateBinding Background}"
+                            CornerRadius="8" Padding="12,0">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock Text="{TemplateBinding Tag}"
+                                       FontSize="16" Margin="0,0,10,0"
+                                       VerticalAlignment="Center"/>
+                            <ContentPresenter VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource InputBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
 </ResourceDictionary>

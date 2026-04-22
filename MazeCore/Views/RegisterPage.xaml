@@ -4,32 +4,78 @@
       Title="{DynamicResource RegisterTitle}">
 
     <Grid Background="{DynamicResource AppBackground}">
-        <Border Style="{StaticResource CardStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="350">
+        <Border Style="{StaticResource CardStyle}"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                Width="360">
             <StackPanel>
-                <TextBlock Text="{DynamicResource RegisterTitle}" FontSize="28" FontWeight="Bold" 
-                           HorizontalAlignment="Center" Margin="0,5,0,20" Foreground="{DynamicResource AppForeground}"/>
+                <!-- Заголовок -->
+                <TextBlock Text="{DynamicResource RegisterTitle}"
+                           FontSize="26" FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,24"
+                           Foreground="{DynamicResource AppForeground}"/>
 
-                <TextBlock Text="{DynamicResource FullNameLabel}" Margin="0,0,0,5" Foreground="{DynamicResource SubtleText}" FontSize="14"/>
-                <TextBox x:Name="FullNameTextBox" Height="38" Margin="0,0,0,10" Style="{StaticResource ThemedTextBoxStyle}"/>
+                <!-- Повне ім'я -->
+                <TextBlock Text="{DynamicResource FullNameLabel}"
+                           Margin="0,0,0,5"
+                           Foreground="{DynamicResource SubtleText}"
+                           FontSize="13"/>
+                <TextBox x:Name="FullNameTextBox"
+                         Height="42"
+                         Margin="0,0,0,14"
+                         Style="{StaticResource ThemedTextBoxStyle}"/>
 
-                <TextBlock Text="{DynamicResource LoginInputLabel}" Margin="0,0,0,5" Foreground="{DynamicResource SubtleText}" FontSize="14"/>
-                <TextBox x:Name="LoginTextBox" Height="38" Margin="0,0,0,10" Style="{StaticResource ThemedTextBoxStyle}"/>
+                <!-- Логін -->
+                <TextBlock Text="{DynamicResource LoginInputLabel}"
+                           Margin="0,0,0,5"
+                           Foreground="{DynamicResource SubtleText}"
+                           FontSize="13"/>
+                <TextBox x:Name="LoginTextBox"
+                         Height="42"
+                         Margin="0,0,0,14"
+                         Style="{StaticResource ThemedTextBoxStyle}"/>
 
-                <TextBlock Text="{DynamicResource PasswordInputLabel}" Margin="0,0,0,5" Foreground="{DynamicResource SubtleText}" FontSize="14"/>
-                <PasswordBox x:Name="PasswordBox" Height="38" Margin="0,0,0,10" Style="{StaticResource ThemedPasswordBoxStyle}"/>
+                <!-- Пароль -->
+                <TextBlock Text="{DynamicResource PasswordInputLabel}"
+                           Margin="0,0,0,5"
+                           Foreground="{DynamicResource SubtleText}"
+                           FontSize="13"/>
+                <PasswordBox x:Name="PasswordBox"
+                             Height="42"
+                             Margin="0,0,0,14"
+                             Style="{StaticResource ThemedPasswordBoxStyle}"/>
 
-                <TextBlock Text="{DynamicResource ConfirmPasswordLabel}" Margin="0,0,0,5" Foreground="{DynamicResource SubtleText}" FontSize="14"/>
-                <PasswordBox x:Name="ConfirmPasswordBox" Height="38" Margin="0,0,0,15" Style="{StaticResource ThemedPasswordBoxStyle}"/>
+                <!-- Підтвердження пароля -->
+                <TextBlock Text="{DynamicResource ConfirmPasswordLabel}"
+                           Margin="0,0,0,5"
+                           Foreground="{DynamicResource SubtleText}"
+                           FontSize="13"/>
+                <PasswordBox x:Name="ConfirmPasswordBox"
+                             Height="42"
+                             Margin="0,0,0,16"
+                             Style="{StaticResource ThemedPasswordBoxStyle}"/>
 
-                <TextBlock x:Name="ErrorTextBlock" Foreground="{DynamicResource DangerColor}" FontSize="13" 
-                           HorizontalAlignment="Center" Margin="0,0,0,15" 
-                           Visibility="Collapsed" TextWrapping="Wrap"/>
+                <!-- Блок помилки -->
+                <TextBlock x:Name="ErrorTextBlock"
+                           Foreground="{StaticResource DangerColor}"
+                           FontSize="13"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,12"
+                           Visibility="Collapsed"
+                           TextWrapping="Wrap"/>
 
-                <Button Content="{DynamicResource BtnSignUp}" Height="45" Margin="0,5,0,15" 
-                        Style="{StaticResource PrimaryButtonStyle}" Click="RegisterButton_Click"/>
+                <!-- Кнопка реєстрації -->
+                <Button Content="{DynamicResource BtnSignUp}"
+                        Height="46"
+                        Margin="0,0,0,14"
+                        Style="{StaticResource PrimaryButtonStyle}"
+                        Click="RegisterButton_Click"/>
 
-                <Button Content="{DynamicResource BtnBackToLogin}" Height="30" Margin="0,0,0,5" 
-                        Style="{StaticResource LinkButtonStyle}" Click="BackToLoginButton_Click"/>
+                <!-- Повернутися до входу -->
+                <Button Content="{DynamicResource BtnBackToLogin}"
+                        Height="30"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Click="BackToLoginButton_Click"/>
             </StackPanel>
         </Border>
     </Grid>

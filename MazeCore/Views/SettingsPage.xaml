@@ -4,28 +4,55 @@
       Title="{DynamicResource SettingsTitle}">
 
     <Grid Background="{DynamicResource AppBackground}">
-        <Border Style="{StaticResource CardStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="350">
+        <Border Style="{StaticResource CardStyle}"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                Width="360">
             <StackPanel>
-                <TextBlock Text="{DynamicResource SettingsTitle}" FontSize="28" FontWeight="Bold" 
-                           HorizontalAlignment="Center" Margin="0,10,0,25" Foreground="{DynamicResource AppForeground}"/>
+                <!-- Заголовок -->
+                <TextBlock Text="{DynamicResource SettingsTitle}"
+                           FontSize="26" FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,28"
+                           Foreground="{DynamicResource AppForeground}"/>
 
-                <TextBlock Text="{DynamicResource ThemeLabel}" Margin="0,0,0,5" Foreground="{DynamicResource SubtleText}" FontSize="14"/>
-                <ComboBox x:Name="ThemeComboBox" Height="38" Margin="0,0,0,15" Style="{StaticResource ThemedComboBoxStyle}">
+                <!-- Вибір теми -->
+                <TextBlock Text="{DynamicResource ThemeLabel}"
+                           Margin="0,0,0,6"
+                           Foreground="{DynamicResource SubtleText}"
+                           FontSize="13"/>
+                <ComboBox x:Name="ThemeComboBox"
+                          Height="42"
+                          Margin="0,0,0,20"
+                          Style="{StaticResource ThemedComboBoxStyle}">
                     <ComboBoxItem Content="{DynamicResource LightThemeOption}" Tag="Light"/>
-                    <ComboBoxItem Content="{DynamicResource DarkThemeOption}" Tag="Dark"/>
+                    <ComboBoxItem Content="{DynamicResource DarkThemeOption}"  Tag="Dark"/>
                 </ComboBox>
 
-                <TextBlock Text="{DynamicResource LanguageLabel}" Margin="0,0,0,5" Foreground="{DynamicResource SubtleText}" FontSize="14"/>
-                <ComboBox x:Name="LanguageComboBox" Height="38" Margin="0,0,0,25" Style="{StaticResource ThemedComboBoxStyle}">
+                <!-- Вибір мови -->
+                <TextBlock Text="{DynamicResource LanguageLabel}"
+                           Margin="0,0,0,6"
+                           Foreground="{DynamicResource SubtleText}"
+                           FontSize="13"/>
+                <ComboBox x:Name="LanguageComboBox"
+                          Height="42"
+                          Margin="0,0,0,28"
+                          Style="{StaticResource ThemedComboBoxStyle}">
                     <ComboBoxItem Content="Українська" Tag="uk"/>
-                    <ComboBoxItem Content="English" Tag="en"/>
+                    <ComboBoxItem Content="English"    Tag="en"/>
                 </ComboBox>
 
-                <Button Content="{DynamicResource BtnSaveSettings}" Height="45" Margin="0,5,0,15" 
-                        Style="{StaticResource PrimaryButtonStyle}" Click="SaveSettingsButton_Click"/>
+                <!-- Зберегти -->
+                <Button Content="{DynamicResource BtnSaveSettings}"
+                        Height="46"
+                        Margin="0,0,0,14"
+                        Style="{StaticResource PrimaryButtonStyle}"
+                        Click="SaveSettingsButton_Click"/>
 
-                <Button Content="{DynamicResource BtnBack}" Height="30" Margin="0,0,0,5" 
-                        Style="{StaticResource LinkButtonStyle}" Click="BackButton_Click"/>
+                <!-- Назад -->
+                <Button Content="{DynamicResource BtnBack}"
+                        Height="30"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Click="BackButton_Click"/>
             </StackPanel>
         </Border>
     </Grid>

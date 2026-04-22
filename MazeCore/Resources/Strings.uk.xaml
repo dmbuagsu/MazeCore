@@ -4,6 +4,9 @@
 
     <!-- Загальні -->
     <sys:String x:Key="AppTitle">MazeCore</sys:String>
+    <sys:String x:Key="BtnBack">Назад</sys:String>
+    <sys:String x:Key="BtnSave">Зберегти</sys:String>
+    <sys:String x:Key="BtnCancel">Скасувати</sys:String>
 
     <!-- WelcomePage -->
     <sys:String x:Key="WelcomeSubtitle">Генератор та вирішувач лабіринтів</sys:String>
@@ -20,7 +23,7 @@
     <!-- RegisterPage -->
     <sys:String x:Key="RegisterTitle">Реєстрація</sys:String>
     <sys:String x:Key="FullNameLabel">Повне ім'я:</sys:String>
-    <sys:String x:Key="LoginInputLabel">Логін:</sys:String>
+    <sys:String x:Key="LoginInputLabel">Логін (нікнейм):</sys:String>
     <sys:String x:Key="PasswordInputLabel">Пароль (мін. 4 символи):</sys:String>
     <sys:String x:Key="ConfirmPasswordLabel">Підтвердження пароля:</sys:String>
     <sys:String x:Key="BtnSignUp">ЗАРЕЄСТРУВАТИСЯ</sys:String>
@@ -28,11 +31,16 @@
 
     <!-- MainMenuPage -->
     <sys:String x:Key="MainMenuTitle">Головне меню</sys:String>
+    <sys:String x:Key="MainMenuSubtitle">Виберіть розділ для роботи</sys:String>
     <sys:String x:Key="BtnPlay">Грати (Вирішувач)</sys:String>
     <sys:String x:Key="BtnEditor">Редактор (Admin)</sys:String>
     <sys:String x:Key="BtnStats">Статистика</sys:String>
     <sys:String x:Key="BtnSettings">Налаштування</sys:String>
     <sys:String x:Key="BtnLogout">Вихід</sys:String>
+    <sys:String x:Key="TilePlayDesc">Завантажте лабіринт і знайдіть вихід за допомогою BFS</sys:String>
+    <sys:String x:Key="TileStatsDesc">Перегляд, пошук та редагування бази лабіринтів</sys:String>
+    <sys:String x:Key="TileEditorDesc">Генерація нових лабіринтів та збереження в базу</sys:String>
+    <sys:String x:Key="TileSettingsDesc">Зміна теми оформлення та мови інтерфейсу</sys:String>
 
     <!-- GamePage -->
     <sys:String x:Key="GameTitle">Вирішення лабіринту</sys:String>
@@ -52,7 +60,6 @@
     <sys:String x:Key="BtnRefresh">Оновити</sys:String>
     <sys:String x:Key="BtnDeleteMaze">Видалити</sys:String>
     <sys:String x:Key="BtnRenameMaze">Перейменувати</sys:String>
-    <sys:String x:Key="BtnBack">Назад</sys:String>
 
     <!-- MazeEditorPage -->
     <sys:String x:Key="EditorTitle">Редактор лабіринтів</sys:String>
@@ -61,6 +68,13 @@
     <sys:String x:Key="WidthLabel">Ширина (клітинок):</sys:String>
     <sys:String x:Key="HeightLabel">Висота (клітинок):</sys:String>
     <sys:String x:Key="BtnGenerate">ЗГЕНЕРУВАТИ</sys:String>
+    <sys:String x:Key="BtnCreateEmpty">ПОРОЖНЄ ПОЛЕ</sys:String>
+    <sys:String x:Key="DrawModeLabel">Режим малювання:</sys:String>
+    <sys:String x:Key="BtnDrawWall">Стіна</sys:String>
+    <sys:String x:Key="BtnErase">Прохід</sys:String>
+    <sys:String x:Key="BtnClearMaze">Очистити поле</sys:String>
+    <sys:String x:Key="ManualDrawHint">Клікайте або тягніть мишкою по полю щоб малювати</sys:String>
+    <sys:String x:Key="EditorHint">Натисніть «Згенерувати» або «Порожнє поле», щоб розпочати</sys:String>
     <sys:String x:Key="BtnSaveMaze">ЗБЕРЕГТИ В БАЗУ</sys:String>
 
     <!-- SettingsPage -->
@@ -70,5 +84,9 @@
     <sys:String x:Key="DarkThemeOption">Темна</sys:String>
     <sys:String x:Key="LanguageLabel">Мова інтерфейсу:</sys:String>
     <sys:String x:Key="BtnSaveSettings">Зберегти налаштування</sys:String>
+
+    <!-- RenameMazeWindow -->
+    <sys:String x:Key="RenameDialogTitle">Перейменування лабіринту</sys:String>
+    <sys:String x:Key="RenameDialogLabel">Введіть нову назву лабіринту:</sys:String>
 
 </ResourceDictionary>

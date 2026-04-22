@@ -1,0 +1,200 @@
+﻿[
+  {
+    "EventType": "System",
+    "Message": "\u0414\u043E\u0434\u0430\u0442\u043E\u043A \u0437\u0430\u043F\u0443\u0449\u0435\u043D\u043E",
+    "UserLogin": "system",
+    "Timestamp": "2026-04-22T18:40:29.6090345+03:00"
+  },
+  {
+    "EventType": "Login",
+    "Message": "\u041A\u043E\u0440\u0438\u0441\u0442\u0443\u0432\u0430\u0447 111111 \u0443\u0441\u043F\u0456\u0448\u043D\u043E \u0443\u0432\u0456\u0439\u0448\u043E\u0432 \u0443 \u0441\u0438\u0441\u0442\u0435\u043C\u0443",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T19:43:43.1948513+03:00"
+  },
+  {
+    "EventType": "Solve",
+    "Message": "\u041B\u0430\u0431\u0456\u0440\u0438\u043D\u0442 qaz \u0432\u0438\u0440\u0456\u0448\u0435\u043D\u043E \u0430\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u043E\u043C BFS. \u0414\u043E\u0432\u0436\u0438\u043D\u0430: 67",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T19:43:55.425759+03:00"
+  },
+  {
+    "EventType": "Solve",
+    "Message": "\u041B\u0430\u0431\u0456\u0440\u0438\u043D\u0442 \u0428\u0432\u0438\u0434\u043A\u0430 \u0433\u0440\u0430 \u0432\u0438\u0440\u0456\u0448\u0435\u043D\u043E \u0430\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u043E\u043C BFS. \u0414\u043E\u0432\u0436\u0438\u043D\u0430: 131",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T19:44:08.4416944+03:00"
+  },
+  {
+    "EventType": "Solve",
+    "Message": "\u041B\u0430\u0431\u0456\u0440\u0438\u043D\u0442 \u0428\u0432\u0438\u0434\u043A\u0430 \u0433\u0440\u0430 \u0432\u0438\u0440\u0456\u0448\u0435\u043D\u043E \u0430\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u043E\u043C BFS. \u0414\u043E\u0432\u0436\u0438\u043D\u0430: 131",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T19:44:19.5823533+03:00"
+  },
+  {
+    "EventType": "Logout",
+    "Message": "\u041A\u043E\u0440\u0438\u0441\u0442\u0443\u0432\u0430\u0447 \u0432\u0438\u0439\u0448\u043E\u0432 \u0437 \u0441\u0438\u0441\u0442\u0435\u043C\u0438",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T19:44:54.3769332+03:00"
+  },
+  {
+    "EventType": "Login",
+    "Message": "\u041A\u043E\u0440\u0438\u0441\u0442\u0443\u0432\u0430\u0447 111111 \u0443\u0441\u043F\u0456\u0448\u043D\u043E \u0443\u0432\u0456\u0439\u0448\u043E\u0432 \u0443 \u0441\u0438\u0441\u0442\u0435\u043C\u0443",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T19:48:10.547746+03:00"
+  },
+  {
+    "EventType": "Settings",
+    "Message": "\u041D\u0430\u043B\u0430\u0448\u0442\u0443\u0432\u0430\u043D\u043D\u044F \u0437\u043C\u0456\u043D\u0435\u043D\u043E: \u0422\u0435\u043C\u0430=Dark, \u041C\u043E\u0432\u0430=en",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T19:48:30.5123057+03:00"
+  },
+  {
+    "EventType": "System",
+    "Message": "Application started",
+    "UserLogin": "system",
+    "Timestamp": "2026-04-22T20:31:26.0887472+03:00"
+  },
+  {
+    "EventType": "Login",
+    "Message": "User 111111 signed in",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T20:31:58.7445694+03:00"
+  },
+  {
+    "EventType": "Solve",
+    "Message": "Maze qaz solved with BFS",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T20:32:32.1410642+03:00"
+  },
+  {
+    "EventType": "Solve",
+    "Message": "Maze qaz solved with BFS",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T20:33:22.8273693+03:00"
+  },
+  {
+    "EventType": "Settings",
+    "Message": "Settings updated. Theme=Light, Language=uk",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T20:33:35.1836307+03:00"
+  },
+  {
+    "EventType": "Settings",
+    "Message": "Settings updated. Theme=HighContrast, Language=uk",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T20:33:54.8768787+03:00"
+  },
+  {
+    "EventType": "Logout",
+    "Message": "User logged out",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T20:34:01.5749606+03:00"
+  },
+  {
+    "EventType": "System",
+    "Message": "Application started",
+    "UserLogin": "system",
+    "Timestamp": "2026-04-22T20:37:17.4185013+03:00"
+  },
+  {
+    "EventType": "System",
+    "Message": "Application started",
+    "UserLogin": "system",
+    "Timestamp": "2026-04-22T22:10:20.8356236+03:00"
+  },
+  {
+    "EventType": "Login",
+    "Message": "User 111111 signed in",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T22:10:32.8420368+03:00"
+  },
+  {
+    "EventType": "Settings",
+    "Message": "Settings updated. Theme=Light, Language=en",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T22:11:19.4946349+03:00"
+  },
+  {
+    "EventType": "Settings",
+    "Message": "Settings updated. Theme=Light, Language=en",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T22:11:29.4294249+03:00"
+  },
+  {
+    "EventType": "Settings",
+    "Message": "Settings updated. Theme=HighContrast, Language=en",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T22:11:35.223857+03:00"
+  },
+  {
+    "EventType": "Logout",
+    "Message": "User logged out",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T22:11:43.1677795+03:00"
+  },
+  {
+    "EventType": "Login",
+    "Message": "User 111111 signed in",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T22:11:53.3846345+03:00"
+  },
+  {
+    "EventType": "Settings",
+    "Message": "Settings updated. Theme=Light, Language=uk",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T22:12:01.9785066+03:00"
+  },
+  {
+    "EventType": "Settings",
+    "Message": "Settings updated. Theme=Dark, Language=uk",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T22:12:17.5341166+03:00"
+  },
+  {
+    "EventType": "Settings",
+    "Message": "Settings updated. Theme=HighContrast, Language=uk",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T22:12:33.0702947+03:00"
+  },
+  {
+    "EventType": "Settings",
+    "Message": "Settings updated. Theme=Light, Language=uk",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T22:12:37.944205+03:00"
+  },
+  {
+    "EventType": "Solve",
+    "Message": "Maze qaz solved with BFS",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T22:13:23.4609753+03:00"
+  },
+  {
+    "EventType": "Solve",
+    "Message": "Maze qaz solved with BFS",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T22:13:29.1255811+03:00"
+  },
+  {
+    "EventType": "Solve",
+    "Message": "Maze qaz solved with BFS",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T22:13:32.5762767+03:00"
+  },
+  {
+    "EventType": "Solve",
+    "Message": "Maze Quick Maze solved with BFS",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T22:13:52.4468966+03:00"
+  },
+  {
+    "EventType": "Solve",
+    "Message": "Maze Quick Maze solved with BFS",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T22:13:56.0171562+03:00"
+  },
+  {
+    "EventType": "Logout",
+    "Message": "User logged out",
+    "UserLogin": "111111",
+    "Timestamp": "2026-04-22T22:14:32.7979466+03:00"
+  }
+]

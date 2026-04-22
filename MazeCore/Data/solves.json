@@ -1,0 +1,92 @@
+﻿[
+  {
+    "Id": "e7f8a03a-2197-4358-be66-ef27e961389a",
+    "MazeName": "qaz",
+    "PlayerLogin": "111111",
+    "SolveTimeSeconds": 8,
+    "PathLength": 67,
+    "Algorithm": "BFS",
+    "SolvedAt": "2026-04-22T19:43:55.4192741+03:00"
+  },
+  {
+    "Id": "967e5f4a-a0cc-4120-9940-96cb85617341",
+    "MazeName": "\u0428\u0432\u0438\u0434\u043A\u0430 \u0433\u0440\u0430",
+    "PlayerLogin": "111111",
+    "SolveTimeSeconds": 0,
+    "PathLength": 131,
+    "Algorithm": "BFS",
+    "SolvedAt": "2026-04-22T19:44:08.4391774+03:00"
+  },
+  {
+    "Id": "5709e3ea-adea-40ad-9f99-8a82f3ea5380",
+    "MazeName": "\u0428\u0432\u0438\u0434\u043A\u0430 \u0433\u0440\u0430",
+    "PlayerLogin": "111111",
+    "SolveTimeSeconds": 0,
+    "PathLength": 131,
+    "Algorithm": "BFS",
+    "SolvedAt": "2026-04-22T19:44:19.5802648+03:00"
+  },
+  {
+    "Id": "e552d49d-afd1-4251-93d2-8d22e398cd5c",
+    "MazeName": "qaz",
+    "PlayerLogin": "111111",
+    "SolveTimeSeconds": 26,
+    "PathLength": 67,
+    "Algorithm": "BFS",
+    "SolvedAt": "2026-04-22T20:32:32.1340228+03:00"
+  },
+  {
+    "Id": "20ebf4f1-0c4c-45f6-9bb4-d7a87226a9ce",
+    "MazeName": "qaz",
+    "PlayerLogin": "111111",
+    "SolveTimeSeconds": 0,
+    "PathLength": 67,
+    "Algorithm": "BFS",
+    "SolvedAt": "2026-04-22T20:33:22.8228399+03:00"
+  },
+  {
+    "Id": "2af45696-1462-4b03-9fcf-b4a4c5621edf",
+    "MazeName": "qaz",
+    "PlayerLogin": "111111",
+    "SolveTimeSeconds": 15,
+    "PathLength": 67,
+    "Algorithm": "BFS",
+    "SolvedAt": "2026-04-22T22:13:23.4558929+03:00"
+  },
+  {
+    "Id": "52c7e11d-30c5-4ad2-9e7e-d1d432c988c8",
+    "MazeName": "qaz",
+    "PlayerLogin": "111111",
+    "SolveTimeSeconds": 0,
+    "PathLength": 67,
+    "Algorithm": "BFS",
+    "SolvedAt": "2026-04-22T22:13:29.1228539+03:00"
+  },
+  {
+    "Id": "94f6dfb3-c08d-4399-a2ec-be52e42c430b",
+    "MazeName": "qaz",
+    "PlayerLogin": "111111",
+    "SolveTimeSeconds": 0,
+    "PathLength": 67,
+    "Algorithm": "BFS",
+    "SolvedAt": "2026-04-22T22:13:32.5735453+03:00"
+  },
+  {
+    "Id": "7d8853ba-a89f-4c4b-a6bb-a26c96efcb1f",
+    "MazeName": "Quick Maze",
+    "PlayerLogin": "111111",
+    "SolveTimeSeconds": 0,
+    "PathLength": 103,
+    "Algorithm": "BFS",
+    "SolvedAt": "2026-04-22T22:13:52.4435457+03:00"
+  },
+  {
+    "Id": "8dccfb24-85c7-4643-baed-3e07346eb9cd",
+    "MazeName": "Quick Maze",
+    "PlayerLogin": "111111",
+    "SolveTimeSeconds": 0,
+    "PathLength": 115,
+    "Algorithm": "BFS",
+    "SolvedAt": "2026-04-22T22:13:56.0145339+03:00"
+  }
+]

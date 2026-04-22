@@ -5,42 +5,151 @@
 
     <Grid Background="{DynamicResource AppBackground}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="290"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Ліва панель -->
+        <!-- Ліва панель параметрів -->
         <Border Grid.Column="0" Style="{StaticResource CardStyle}" Margin="15">
-            <StackPanel>
-                <TextBlock Text="{DynamicResource ParamsLabel}" FontSize="20" FontWeight="Bold" Margin="0,0,0,15" Foreground="{DynamicResource AppForeground}"/>
+            <!-- ScrollViewer щоб всі кнопки були доступні при малому вікні -->
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource ParamsLabel}"
+                               FontSize="20" FontWeight="Bold"
+                               Margin="0,0,0,16"
+                               Foreground="{DynamicResource AppForeground}"/>
 
-                <TextBlock Text="{DynamicResource MazeNameLabel}" Foreground="{DynamicResource SubtleText}" Margin="0,0,0,5"/>
-                <TextBox x:Name="MazeNameTextBox" Height="35" Margin="0,0,0,15" Style="{StaticResource ThemedTextBoxStyle}"/>
+                    <!-- Назва лабіринту -->
+                    <TextBlock Text="{DynamicResource MazeNameLabel}"
+                               Foreground="{DynamicResource SubtleText}"
+                               FontSize="13" Margin="0,0,0,5"/>
+                    <TextBox x:Name="MazeNameTextBox"
+                             Height="42" Margin="0,0,0,14"
+                             Style="{StaticResource ThemedTextBoxStyle}"/>
 
-                <TextBlock Text="{DynamicResource WidthLabel}" Foreground="{DynamicResource SubtleText}" Margin="0,0,0,5"/>
-                <TextBox x:Name="WidthTextBox" Text="21" Height="35" Margin="0,0,0,15" Style="{StaticResource ThemedTextBoxStyle}"/>
+                    <!-- Розміри -->
+                    <Grid Margin="0,0,0,14">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="{DynamicResource WidthLabel}"
+                                       Foreground="{DynamicResource SubtleText}"
+                                       FontSize="13" Margin="0,0,0,5"/>
+                            <TextBox x:Name="WidthTextBox" Text="21"
+                                     Height="42"
+                                     Style="{StaticResource ThemedTextBoxStyle}"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Text="{DynamicResource HeightLabel}"
+                                       Foreground="{DynamicResource SubtleText}"
+                                       FontSize="13" Margin="0,0,0,5"/>
+                            <TextBox x:Name="HeightTextBox" Text="21"
+                                     Height="42"
+                                     Style="{StaticResource ThemedTextBoxStyle}"/>
+                        </StackPanel>
+                    </Grid>
 
-                <TextBlock Text="{DynamicResource HeightLabel}" Foreground="{DynamicResource SubtleText}" Margin="0,0,0,5"/>
-                <TextBox x:Name="HeightTextBox" Text="21" Height="35" Margin="0,0,0,20" Style="{StaticResource ThemedTextBoxStyle}"/>
+                    <!-- Повідомлення статусу -->
+                    <TextBlock x:Name="StatusTextBlock"
+                               FontSize="12" TextWrapping="Wrap"
+                               Margin="0,0,0,12" MinHeight="16"/>
 
-                <TextBlock x:Name="StatusTextBlock" FontSize="13" TextWrapping="Wrap" Margin="0,0,0,10"/>
+                    <!-- Кнопка генерації (алгоритм) -->
+                    <Button Content="{DynamicResource BtnGenerate}"
+                            Style="{StaticResource PrimaryButtonStyle}"
+                            Height="42" Margin="0,0,0,8"
+                            Click="GenerateButton_Click"/>
 
-                <Button Content="{DynamicResource BtnGenerate}" Style="{StaticResource PrimaryButtonStyle}" 
-                        Height="45" Margin="0,0,0,15" Click="GenerateButton_Click"/>
+                    <!-- Кнопка порожнього поля для ручного малювання -->
+                    <Button Content="{DynamicResource BtnCreateEmpty}"
+                            Style="{StaticResource SecondaryButtonStyle}"
+                            Height="42" Margin="0,0,0,16"
+                            Click="CreateEmptyButton_Click"/>
 
-                <Button x:Name="SaveButton" Content="{DynamicResource BtnSaveMaze}" Style="{StaticResource PrimaryButtonStyle}" 
-                        Background="{DynamicResource SuccessColor}" Height="45" Margin="0,0,0,20" IsEnabled="False" Click="SaveButton_Click"/>
+                    <!-- Роздільник -->
+                    <Separator Background="{DynamicResource BorderColor}" Margin="0,0,0,12"/>
 
-                <Button Content="{DynamicResource BtnBack}" Style="{StaticResource LinkButtonStyle}" 
-                        Height="30" Click="BackButton_Click"/>
-            </StackPanel>
+                    <!-- Режим малювання -->
+                    <TextBlock Text="{DynamicResource DrawModeLabel}"
+                               Foreground="{DynamicResource SubtleText}"
+                               FontSize="13" Margin="0,0,0,6"/>
+
+                    <!-- Перемикач режиму: Стіна / Прохід -->
+                    <Grid Margin="0,0,0,12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="DrawWallBtn"
+                                Grid.Column="0"
+                                Content="{DynamicResource BtnDrawWall}"
+                                Style="{StaticResource PrimaryButtonStyle}"
+                                Height="36"
+                                Click="DrawWallBtn_Click"/>
+                        <Button x:Name="EraseBtn"
+                                Grid.Column="2"
+                                Content="{DynamicResource BtnErase}"
+                                Style="{StaticResource SecondaryButtonStyle}"
+                                Height="36"
+                                Click="EraseBtn_Click"/>
+                    </Grid>
+
+                    <!-- Підказка -->
+                    <TextBlock Text="{DynamicResource ManualDrawHint}"
+                               FontSize="11" Foreground="{DynamicResource SubtleText}"
+                               TextWrapping="Wrap" Margin="0,0,0,12" TextAlignment="Center"/>
+
+                    <!-- Кнопка очищення -->
+                    <Button Content="{DynamicResource BtnClearMaze}"
+                            Style="{StaticResource DangerButtonStyle}"
+                            Height="36" Margin="0,0,0,16"
+                            Click="ClearMazeButton_Click"/>
+
+                    <Separator Background="{DynamicResource BorderColor}" Margin="0,0,0,12"/>
+
+                    <!-- Зберегти -->
+                    <Button x:Name="SaveButton"
+                            Content="{DynamicResource BtnSaveMaze}"
+                            Style="{StaticResource PrimaryButtonStyle}"
+                            Background="{StaticResource SuccessColor}"
+                            Height="46" Margin="0,0,0,16"
+                            IsEnabled="False"
+                            Click="SaveButton_Click"/>
+
+                    <Button Content="{DynamicResource BtnBack}"
+                            Style="{StaticResource LinkButtonStyle}"
+                            Height="30"
+                            Click="BackButton_Click"/>
+                </StackPanel>
+            </ScrollViewer>
         </Border>
 
-        <!-- Права панель з канвасом -->
+        <!-- Права панель з канвасом лабіринту -->
         <Border Grid.Column="1" Style="{StaticResource CardStyle}" Margin="0,15,15,15">
-            <Viewbox>
-                <UniformGrid x:Name="MazeCanvas" Background="Gray"/>
-            </Viewbox>
+            <Grid>
+                <TextBlock x:Name="EmptyHintText"
+                           Text="{DynamicResource EditorHint}"
+                           FontSize="16"
+                           Foreground="{DynamicResource SubtleText}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"
+                           Margin="40,0"/>
+
+                <Viewbox x:Name="MazeViewbox" Visibility="Collapsed">
+                    <!-- Canvas замість UniformGrid — підтримує drag-малювання -->
+                    <Canvas x:Name="MazeCanvas"
+                            Background="White"
+                            MouseLeftButtonDown="MazeCanvas_MouseLeftButtonDown"
+                            MouseLeftButtonUp="MazeCanvas_MouseLeftButtonUp"
+                            MouseMove="MazeCanvas_MouseMove"/>
+                </Viewbox>
+            </Grid>
         </Border>
     </Grid>
 </Page>

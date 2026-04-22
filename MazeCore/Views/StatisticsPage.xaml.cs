@@ -104,22 +104,35 @@ namespace MazeCore.Views
         {
             if (MazesDataGrid.SelectedItem is Maze selectedMaze)
             {
-                // Демонстрація операції Update. Замість повноцінного діалогового вікна введення,
-                // ми просто додаємо маркер "Ред." до назви, щоб показати як оновлювати запис у файлі.
-                List<Maze> allMazes = JsonProvider.LoadFromFile<Maze>(MazesFileName);
-                var mazeToUpdate = allMazes.FirstOrDefault(m => m.Id == selectedMaze.Id);
-                
-                if (mazeToUpdate != null)
+                // Відкриваємо власне діалогове вікно для введення нової назви
+                var dialog = new RenameMazeWindow(selectedMaze.Name);
+                dialog.Owner = Window.GetWindow(this);
+
+                if (dialog.ShowDialog() == true)
                 {
-                    mazeToUpdate.Name = mazeToUpdate.Name + " (Ред.)";
-                    JsonProvider.SaveToFile(MazesFileName, allMazes);
-                    
-                    // Оновлюємо UI
-                    selectedMaze.Name = mazeToUpdate.Name;
-                    MazesDataGrid.Items.Refresh(); // Примусове оновлення гріда
-                    
-                    Services.LogService.Log("Update", $"Лабіринт {selectedMaze.Name} перейменовано");
-                    MessageBox.Show("Запис оновлено (додано маркер 'Ред.')", "Update", MessageBoxButton.OK, MessageBoxImage.Information);
+                    string newName = dialog.MazeName;
+
+                    if (string.IsNullOrWhiteSpace(newName))
+                    {
+                        MessageBox.Show("Назва не може бути порожньою.", "Помилка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
+
+                    // Оновлюємо запис у файлі
+                    List<Maze> allMazes = JsonProvider.LoadFromFile<Maze>(MazesFileName);
+                    var mazeToUpdate = allMazes.FirstOrDefault(m => m.Id == selectedMaze.Id);
+
+                    if (mazeToUpdate != null)
+                    {
+                        mazeToUpdate.Name = newName;
+                        JsonProvider.SaveToFile(MazesFileName, allMazes);
+
+                        // Оновлюємо відображення в колекції
+                        selectedMaze.Name = newName;
+                        MazesDataGrid.Items.Refresh();
+
+                        Services.LogService.Log("Update", $"Лабіринт перейменовано на '{newName}'");
+                    }
                 }
             }
             else

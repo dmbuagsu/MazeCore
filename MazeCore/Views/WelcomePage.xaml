@@ -3,18 +3,114 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="{DynamicResource AppTitle}">
 
-    <Grid Background="{DynamicResource AppBackground}">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="{DynamicResource AppTitle}" FontSize="56" FontWeight="Bold" 
-                       Foreground="{DynamicResource AccentColor}" HorizontalAlignment="Center" Margin="0,0,0,5"/>
-            <TextBlock Text="{DynamicResource WelcomeSubtitle}" FontSize="18" 
-                       Foreground="{DynamicResource SubtleText}" HorizontalAlignment="Center" Margin="0,0,0,40"/>
+    <Grid>
+        <!-- Фоновий градієнт від темно-синього до темно-сірого -->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#0D1B2A" Offset="0"/>
+                <GradientStop Color="#1A2F45" Offset="0.5"/>
+                <GradientStop Color="#0A1628" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
 
-            <Button Content="{DynamicResource BtnLogin}" Width="250" Height="45" Margin="0,0,0,15"
-                    Style="{StaticResource PrimaryButtonStyle}" Click="GoToLogin_Click"/>
+        <!-- Декоративне коло зверху праворуч -->
+        <Ellipse Width="400" Height="400"
+                 HorizontalAlignment="Right" VerticalAlignment="Top"
+                 Margin="0,-150,-100,0" Opacity="0.06">
+            <Ellipse.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#00A8FF" Offset="0"/>
+                    <GradientStop Color="Transparent" Offset="1"/>
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
 
-            <Button Content="{DynamicResource BtnCreateAccount}" Width="250" Height="45" 
-                    Style="{StaticResource PrimaryButtonStyle}" Click="GoToRegister_Click"/>
+        <!-- Декоративне коло знизу ліворуч -->
+        <Ellipse Width="350" Height="350"
+                 HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                 Margin="-100,0,0,-80" Opacity="0.05">
+            <Ellipse.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#00A8FF" Offset="0"/>
+                    <GradientStop Color="Transparent" Offset="1"/>
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+
+        <!-- Центральний контент -->
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="340">
+
+            <!-- Іконка-лабіринт (🧩) та назва -->
+            <TextBlock Text="🧩" FontSize="56" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+
+            <TextBlock Text="{DynamicResource AppTitle}"
+                       FontSize="52" FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,6">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#00A8FF" Offset="0"/>
+                        <GradientStop Color="#00D4FF" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBlock>
+
+            <TextBlock Text="{DynamicResource WelcomeSubtitle}"
+                       FontSize="16"
+                       Foreground="#88AABB"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,50"
+                       TextAlignment="Center"/>
+
+            <!-- Кнопка входу -->
+            <Button Content="{DynamicResource BtnLogin}"
+                    Height="48" Margin="0,0,0,14"
+                    Style="{StaticResource PrimaryButtonStyle}"
+                    FontSize="15"
+                    Click="GoToLogin_Click"/>
+
+            <!-- Кнопка реєстрації (менш яскрава) -->
+            <Button x:Name="RegisterNavBtn"
+                    Content="{DynamicResource BtnCreateAccount}"
+                    Height="48"
+                    Click="GoToRegister_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background"      Value="Transparent"/>
+                        <Setter Property="Foreground"      Value="#00A8FF"/>
+                        <Setter Property="FontSize"        Value="15"/>
+                        <Setter Property="FontWeight"      Value="SemiBold"/>
+                        <Setter Property="BorderThickness" Value="2"/>
+                        <Setter Property="BorderBrush"     Value="#00A8FF"/>
+                        <Setter Property="Cursor"          Value="Hand"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="Bd"
+                                            Background="{TemplateBinding Background}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="8" Padding="12,8">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="Bd" Property="Background" Value="#1A00A8FF"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <!-- Версія внизу -->
+            <TextBlock Text="v1.0  •  MazeCore"
+                       Foreground="#44667788"
+                       FontSize="11"
+                       HorizontalAlignment="Center"
+                       Margin="0,30,0,0"/>
         </StackPanel>
     </Grid>
 </Page>

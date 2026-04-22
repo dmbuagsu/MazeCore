@@ -4,6 +4,9 @@
 
     <!-- General -->
     <sys:String x:Key="AppTitle">MazeCore</sys:String>
+    <sys:String x:Key="BtnBack">Back</sys:String>
+    <sys:String x:Key="BtnSave">Save</sys:String>
+    <sys:String x:Key="BtnCancel">Cancel</sys:String>
 
     <!-- WelcomePage -->
     <sys:String x:Key="WelcomeSubtitle">Maze Generator and Pathfinder</sys:String>
@@ -20,7 +23,7 @@
     <!-- RegisterPage -->
     <sys:String x:Key="RegisterTitle">Registration</sys:String>
     <sys:String x:Key="FullNameLabel">Full Name:</sys:String>
-    <sys:String x:Key="LoginInputLabel">Username:</sys:String>
+    <sys:String x:Key="LoginInputLabel">Username (nickname):</sys:String>
     <sys:String x:Key="PasswordInputLabel">Password (min. 4 chars):</sys:String>
     <sys:String x:Key="ConfirmPasswordLabel">Confirm Password:</sys:String>
     <sys:String x:Key="BtnSignUp">REGISTER</sys:String>
@@ -28,11 +31,16 @@
 
     <!-- MainMenuPage -->
     <sys:String x:Key="MainMenuTitle">Main Menu</sys:String>
+    <sys:String x:Key="MainMenuSubtitle">Select a section to continue</sys:String>
     <sys:String x:Key="BtnPlay">Play (Pathfinder)</sys:String>
     <sys:String x:Key="BtnEditor">Editor (Admin)</sys:String>
     <sys:String x:Key="BtnStats">Statistics</sys:String>
     <sys:String x:Key="BtnSettings">Settings</sys:String>
     <sys:String x:Key="BtnLogout">Logout</sys:String>
+    <sys:String x:Key="TilePlayDesc">Load a maze and find the exit using BFS algorithm</sys:String>
+    <sys:String x:Key="TileStatsDesc">View, search and manage the maze database</sys:String>
+    <sys:String x:Key="TileEditorDesc">Generate new mazes and save them to the database</sys:String>
+    <sys:String x:Key="TileSettingsDesc">Change the theme and interface language</sys:String>
 
     <!-- GamePage -->
     <sys:String x:Key="GameTitle">Maze Solver</sys:String>
@@ -52,7 +60,6 @@
     <sys:String x:Key="BtnRefresh">Refresh</sys:String>
     <sys:String x:Key="BtnDeleteMaze">Delete</sys:String>
     <sys:String x:Key="BtnRenameMaze">Rename</sys:String>
-    <sys:String x:Key="BtnBack">Back</sys:String>
 
     <!-- MazeEditorPage -->
     <sys:String x:Key="EditorTitle">Maze Editor</sys:String>
@@ -61,6 +68,13 @@
     <sys:String x:Key="WidthLabel">Width (cells):</sys:String>
     <sys:String x:Key="HeightLabel">Height (cells):</sys:String>
     <sys:String x:Key="BtnGenerate">GENERATE</sys:String>
+    <sys:String x:Key="BtnCreateEmpty">EMPTY FIELD</sys:String>
+    <sys:String x:Key="DrawModeLabel">Drawing mode:</sys:String>
+    <sys:String x:Key="BtnDrawWall">Wall</sys:String>
+    <sys:String x:Key="BtnErase">Path</sys:String>
+    <sys:String x:Key="BtnClearMaze">Clear Field</sys:String>
+    <sys:String x:Key="ManualDrawHint">Click or drag the mouse to draw walls / paths</sys:String>
+    <sys:String x:Key="EditorHint">Press Generate or Empty Field to start</sys:String>
     <sys:String x:Key="BtnSaveMaze">SAVE TO DATABASE</sys:String>
 
     <!-- SettingsPage -->
@@ -70,5 +84,9 @@
     <sys:String x:Key="DarkThemeOption">Dark</sys:String>
     <sys:String x:Key="LanguageLabel">Interface Language:</sys:String>
     <sys:String x:Key="BtnSaveSettings">Save Settings</sys:String>
+
+    <!-- RenameMazeWindow -->
+    <sys:String x:Key="RenameDialogTitle">Rename Maze</sys:String>
+    <sys:String x:Key="RenameDialogLabel">Enter a new maze name:</sys:String>
 
 </ResourceDictionary>
